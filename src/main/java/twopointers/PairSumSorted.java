@@ -3,6 +3,9 @@ package twopointers;
 public class PairSumSorted {
     public int[] findPairForTargetSum(int[] sortedNumbers, int target){
         int [] result = new int[2];
+        if(sortedNumbers == null || sortedNumbers.length == 0 || sortedNumbers.length == 1){
+            return result;
+        }
         int sum ;
         int leftPointer = 0;
         int rightPointer = sortedNumbers.length - 1;
