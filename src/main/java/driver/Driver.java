@@ -2,7 +2,10 @@ package driver;
 
 import twopointers.*;
 
-import java.util.List;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 public class Driver {
     public static void main(String[] args) {
@@ -20,14 +23,18 @@ public class Driver {
         TripleSum tripleSum = new TripleSum();
         int [] numbers = {0,-1,2,-3,1};
         int targetSum = 0;
-        List<Integer[]> resultTripleSum = tripleSum.findTripletForTargetSumBruteForce(numbers, targetSum);
-        if (resultTripleSum == null) {
+        Set<SortedSet<Integer>> triplets = tripleSum.findTripletForTargetSumBruteForce(numbers, targetSum);
+        if (triplets == null) {
             System.out.println("No triplet found");
         }
-        for (int resultTripleSumCount = 0; resultTripleSumCount < resultTripleSum.size(); resultTripleSumCount++) {
-            System.out.println("First Index of result Array " + resultTripleSumCount + " : " + resultTripleSum.get(resultTripleSumCount)[0]);
-            System.out.println("Second Index of result Array " + resultTripleSumCount + " : " + resultTripleSum.get(resultTripleSumCount)[1]);
-            System.out.println("Third Index of result Array " + resultTripleSumCount + " : " +  resultTripleSum.get(resultTripleSumCount)[2]);
+        for (int tripletCount = 0; tripletCount < triplets.size(); tripletCount++) {
+            //Iterator<Integer> treeSet = ((TreeSet<Integer>)triplets.toArray()[tripletCount]).iterator();
+            System.out.println("triplet["+tripletCount+"] :" + triplets.toArray()[tripletCount]);
+           /* Integer index = 0;
+            while (treeSet.hasNext()) {
+                System.out.println("Index["+index+"] of triplet["+tripletCount+"] :" + treeSet.next());
+                index++;
+            }*/
         }
     }
 }
