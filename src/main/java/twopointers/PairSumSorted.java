@@ -1,11 +1,12 @@
 package twopointers;
 
 public class PairSumSorted {
-    public int[] findPairForTargetSum(int[] sortedNumbers, int target){
-        int [] result = new int[2];
+    public Integer[] findPairForTargetSum(int[] sortedNumbers, int target){
+        Integer [] result = {null,null};
         if(sortedNumbers == null || sortedNumbers.length == 0 || sortedNumbers.length == 1){
             return result;
         }
+
         int sum ;
         int leftPointer = 0;
         int rightPointer = sortedNumbers.length - 1;
@@ -24,8 +25,7 @@ public class PairSumSorted {
             }
             //if the target pair is found, return its indexes
             else{
-                result[0] = leftPointer;
-                result[1] = rightPointer;
+                result = new Integer[]{leftPointer,rightPointer};
                 return result;
             }
         }
