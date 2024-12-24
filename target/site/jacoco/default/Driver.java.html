@@ -3,11 +3,15 @@
 <span class="nc" id="L3">public class Driver {</span>
     public static void main(String[] args) {
 <span class="nc" id="L5">        PairSumSorted objPairSumSorted = new PairSumSorted();</span>
-<span class="nc" id="L6">        int []sortedArray = new int[]{-5,-2,3,4,6};</span>
+<span class="nc" id="L6">        int []sortedNumbers = new int[]{-5,-2,3,4,6};</span>
 <span class="nc" id="L7">        int target = 7;</span>
-<span class="nc" id="L8">        Integer [] result = objPairSumSorted.findPairForTargetSum(sortedArray,target);</span>
-<span class="nc" id="L9">        System.out.println(&quot;First Index : &quot; + result[0]);</span>
-<span class="nc" id="L10">        System.out.println(&quot;Second Index : &quot; + result[1]);</span>
-<span class="nc" id="L11">    }</span>
+<span class="nc" id="L8">        Integer [] resultOptimised = objPairSumSorted.findPairForTargetSum(sortedNumbers,target);</span>
+<span class="nc" id="L9">        System.out.println(&quot;First Index : &quot; + resultOptimised[0]);</span>
+<span class="nc" id="L10">        System.out.println(&quot;Second Index : &quot; + resultOptimised[1]);</span>
+
+<span class="nc" id="L12">        Integer [] resultBruteForce = objPairSumSorted.findPairForTargetSumBruteForce(sortedNumbers,target);</span>
+<span class="nc" id="L13">        System.out.println(&quot;First Index : &quot; + resultBruteForce[0]);</span>
+<span class="nc" id="L14">        System.out.println(&quot;Second Index : &quot; + resultBruteForce[1]);</span>
+<span class="nc" id="L15">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

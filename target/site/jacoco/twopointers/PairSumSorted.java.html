@@ -31,5 +31,24 @@
         }
 <span class="fc" id="L32">        return result;</span>
     }
+
+    public Integer[] findPairForTargetSumBruteForce(int[] sortedNumbers, int target){
+<span class="fc" id="L36">        Integer [] result = {null,null};</span>
+<span class="fc bfc" id="L37" title="All 6 branches covered.">        if(sortedNumbers == null || sortedNumbers.length == 0 || sortedNumbers.length == 1){</span>
+<span class="fc" id="L38">            return result;</span>
+        }
+
+        int sum ;
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        for (int leftPointer = 0; leftPointer &lt; sortedNumbers.length; leftPointer++) {</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">            for (int rightPointer = 0; rightPointer &lt; sortedNumbers.length; rightPointer++) {</span>
+<span class="fc" id="L44">                sum = sortedNumbers[leftPointer] + sortedNumbers[rightPointer];</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">                if(sum == target){</span>
+<span class="fc" id="L46">                    result = new Integer[]{leftPointer,rightPointer};</span>
+<span class="fc" id="L47">                    return result;</span>
+                }
+            }
+        }
+<span class="fc" id="L51">        return result;</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
