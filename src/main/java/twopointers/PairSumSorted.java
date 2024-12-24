@@ -31,4 +31,23 @@ public class PairSumSorted {
         }
         return result;
     }
+
+    public Integer[] findPairForTargetSumBruteForce(int[] sortedNumbers, int target){
+        Integer [] result = {null,null};
+        if(sortedNumbers == null || sortedNumbers.length == 0 || sortedNumbers.length == 1){
+            return result;
+        }
+
+        int sum ;
+        for (int leftPointer = 0; leftPointer < sortedNumbers.length; leftPointer++) {
+            for (int rightPointer = 0; rightPointer < sortedNumbers.length; rightPointer++) {
+                sum = sortedNumbers[leftPointer] + sortedNumbers[rightPointer];
+                if(sum == target){
+                    result = new Integer[]{leftPointer,rightPointer};
+                    return result;
+                }
+            }
+        }
+        return result;
+    }
 }

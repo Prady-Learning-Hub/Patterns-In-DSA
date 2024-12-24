@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PairSumSorted.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Patterns-In-DSA</a> &gt; <a href="index.source.html" class="el_package">twopointers</a> &gt; <span class="el_source">PairSumSorted.java</span></div><h1>PairSumSorted.java</h1><pre class="source lang-java linenums">package twopointers;
+
+<span class="fc" id="L3">public class PairSumSorted {</span>
+    public Integer[] findPairForTargetSum(int[] sortedNumbers, int target){
+<span class="fc" id="L5">        Integer [] result = {null,null};</span>
+<span class="fc bfc" id="L6" title="All 6 branches covered.">        if(sortedNumbers == null || sortedNumbers.length == 0 || sortedNumbers.length == 1){</span>
+<span class="fc" id="L7">            return result;</span>
+        }
+
+        int sum ;
+<span class="fc" id="L11">        int leftPointer = 0;</span>
+<span class="fc" id="L12">        int rightPointer = sortedNumbers.length - 1;</span>
+<span class="fc bfc" id="L13" title="All 2 branches covered.">        while(leftPointer &lt; rightPointer){</span>
+<span class="fc" id="L14">            sum = sortedNumbers[leftPointer] + sortedNumbers[rightPointer];</span>
+
+            // if the sum is smaller, increment the left pointer ,
+            // aiming to increase the sum towards the target value
+<span class="fc bfc" id="L18" title="All 2 branches covered.">            if(sum &lt; target){</span>
+<span class="fc" id="L19">                leftPointer++;</span>
+            }
+            //if the sum is larger, decrement the right pointer,
+            //aiming to decrease the sum towards the target value
+<span class="fc bfc" id="L23" title="All 2 branches covered.">            else if(sum &gt; target){</span>
+<span class="fc" id="L24">                rightPointer --;</span>
+            }
+            //if the target pair is found, return its indexes
+            else{
+<span class="fc" id="L28">                result = new Integer[]{leftPointer,rightPointer};</span>
+<span class="fc" id="L29">                return result;</span>
+            }
+        }
+<span class="fc" id="L32">        return result;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
