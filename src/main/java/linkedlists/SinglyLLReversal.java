@@ -4,7 +4,7 @@ public class SinglyLLReversal {
   public SinglyLLNode reverseLinkedList(SinglyLLNode head){
     SinglyLLNode prev = null;
     SinglyLLNode current = head;
-    SinglyLLNode next = null;
+    SinglyLLNode next ;
 
     while(current != null){
       next = current.next;
@@ -14,4 +14,16 @@ public class SinglyLLReversal {
     }
     return prev;
   }
+
+  public SinglyLLNode reverseLinkedListRecursive(SinglyLLNode head){
+    if(head == null || head.next == null){
+      return head;
+    }
+    SinglyLLNode reversedHead = reverseLinkedListRecursive(head.next);
+    head.next.next = head;
+    head.next = null;
+    return reversedHead;
+  }
 }
+
+
